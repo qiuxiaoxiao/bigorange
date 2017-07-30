@@ -4,26 +4,82 @@
     <meta charset="UTF-8">
     <title>首页</title>
 
-    <link href="lib/bootstrap.min.css" rel="stylesheet">
-    <script src="lib/jquery-3.0.0.min.js"></script>
-    <script src="lib/bootstrap.min.js"></script>
-    <link href="css/index.css" rel="stylesheet">
+    <link href="./lib/bootstrap.min.css" rel="stylesheet">
+    <script src="./lib/jquery-3.0.0.min.js"></script>
+    <script src="./lib/bootstrap.min.js"></script>
+    <link href="./css/index.css" rel="stylesheet">
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".head_nav li").each(function(index){
+                var linode = this;
+                $(this).click(function(){
+                    setTimeout(function(){
+                        $(".head_nav li").removeClass("li_clicked");
+                        $(linode).addClass("li_clicked");
 
+                        $(".tabs_cont .tabContent").removeClass("content");
+                        $(".tabs_cont").eq(index).addClass("content")
+                    })
+                },300);
+            })
+        })
+    </script>
 </head>
+
+
 <body>
     <div class="header">
-        <div class="head_home">
-            <img src="">
-        </div>
+
         <ul class="head_nav">
-            <li>web</li>
+            <li>Web</li>
             <li>Java</li>
-            <li>python</li>
-            <li>matlab</li>
-            <li>机器学习</li>
+            <li>Python</li>
+            <li>数据挖掘</li>
+            <li class="li_clicked">个人简介</li>
         </ul>
+
+        <div class="tabs_cont">
+            <div class="tabContent" style="display:none">
+                Web
+            </div>
+
+            <div class="tabContent" style="display:none">
+                Java
+            </div>
+
+            <div class="tabContent" style="display:none">
+                Python
+            </div>
+
+            <div class="tabContent" style="display:none">
+                数据挖掘
+            </div>
+
+            <div class="tabContent">
+                个人简介
+            </div>
+        </div>
+
     </div>
 
 
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".head_nav li").each(function(index){
+            var linode = this;
+            $(this).click(function(){
+                setTimeout(function(){
+                    $(".head_nav li").removeClass("li_clicked");
+                    $(linode).addClass("li_clicked");
+
+                    $(".tabs_cont .tabContent").removeClass("content");
+                    $(".tabs_cont").eq(index).addClass("content")
+                });
+            });
+        })
+    })
+</script>
 </body>
 </html>
