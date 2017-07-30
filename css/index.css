@@ -1,0 +1,8 @@
+.header{}
+.header .head_nav li{
+    list-style-type: none;
+    float: left;
+    width: 150px;
+    background-color: #00CCFF;
+    color: #ffffff;
+}
